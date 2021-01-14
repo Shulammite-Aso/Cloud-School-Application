@@ -1,4 +1,4 @@
-const { spawnSync, spawn} = require('child_process');
+const {execSync, spawn} = require('child_process');
 
 module.exports.installWget = (operatingSystem) => {
 

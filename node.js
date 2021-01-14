@@ -22,9 +22,15 @@ module.exports.installNode = (operatingSystem) => {
         child = execSync("brew install node", {'encoding': 'UTF-8', 'stdio': 'inherit'});
         
     } else if (operatingSystem === "Windows_NT") {
+      
+      const coco = execSync('coco -v', {'encoding': 'UTF-8'});
 
-      // First install chocolatey
-        child =execSync("sudo Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))", {'encoding': 'UTF-8', 'stdio': 'inherit'});
+      if (!coco) {
+
+        // First install chocolatey
+        child = execSync("sudo Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))", {'encoding': 'UTF-8', 'stdio': 'inherit'});
+        
+      };
           
           // Install node with chocolatey
 
