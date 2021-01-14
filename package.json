@@ -1,0 +1,15 @@
+{
+  "name": "cli-install",
+  "version": "1.0.0",
+  "description": "A command line tool to install wget, curl and nodejs",
+  "main": "index.js",
+  "bin": {
+    "cli-install": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Amarachi Shulammite Aso",
+  "license": "ISC"
+}
